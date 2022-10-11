@@ -2,30 +2,24 @@
 #include <stdlib.h>
 
 
-void print_start(){
-	int i;
-	for(i=0; i<10; i++){
-		printf("*");
-	}
+void func2(int x){
+	printf("func2 x is at %p\n",&x);
+}
+
+void func(){
+	int x;
+	printf("func1 x is at %p\n",&x);
+	func2(x);
 }
 
 int main(void) {
-	/*
-	int i;
-	for(i=0; i<10; i++){
-		printf("*");
-	}
-	for(i=0; i<10; i++){
-		printf("*");
-	}
-	for(i=0; i<10; i++){
-		printf("*");
-	}
-	*/
-	print_start();
-	print_start();
-	print_start();
+	int x;
+	printf("main x is at %p\n",&x);
 	
+	func();
 	
 	return 0;
 }
+
+
+
