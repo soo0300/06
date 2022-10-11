@@ -1,25 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void func2(int x){
-	printf("func2 x is at %p\n",&x);
+int sumTwo(int a, int b){
+	return (a+b);
 }
 
-void func(){
-	int x;
-	printf("func1 x is at %p\n",&x);
-	func2(x);
+int square(int n){
+	return(n*n);
+
 }
 
-int main(void) {
-	int x;
-	printf("main x is at %p\n",&x);
-	
-	func();
-	
+int get_max(int x, int y){
+	if(x>=y){
+		return x;
+	}else{
+		return y;
+		
+	}
+}
+int main(void){
+	int ressum, ressquare, resgetmax;
+	ressum=sumTwo(2,3);
+	ressquare=square(5);
+	resgetmax=get_max(-3,4);
+
+	printf("%d %d %d",ressum,ressquare,resgetmax);
+
 	return 0;
+
+			
 }
-
-
-
